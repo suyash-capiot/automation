@@ -89,3 +89,8 @@ echo "rmfile  : [$rmfile]"
 #Deploying the config JAR
 echo "ant -f $WORKSPACE/Automation/osbDeployScript.xml -Dbasedir=$WORKSPACE/OSB -Dsrcfile=$depfile -DjarDir=$tmpJARs -DsettingsFile=$WORKSPACE/Automation/connParams.properties write"
 ant -f $WORKSPACE/Automation/osbDeployScript.xml -Dbasedir=$WORKSPACE/OSB -Dsrcfile=$depfile -DjarDir=$tmpJARs -DsettingsFile=$WORKSPACE/Automation/connParams-$envVar.properties write
+
+
+bugNum=$BUG_NUMBER
+
+cp -rip $JENKINS_HOME/jobs/$JOB_NAME/builds/$BUILD_NUMBER $JENKINS_HOME/jobs/$JOB_NAME/builds/SI-v00.$bugNum.$BUILD_NUMBER
