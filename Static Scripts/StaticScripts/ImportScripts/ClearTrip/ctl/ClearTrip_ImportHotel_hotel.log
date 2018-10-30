@@ -1,0 +1,93 @@
+
+SQL*Loader: Release 12.1.0.2.0 - Production on Thu Mar 2 17:44:36 2017
+
+Copyright (c) 1982, 2014, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   /tmp/Static/StaticScripts/ImportScripts/ClearTrip/ctl/ClearTrip_ImportHotel_hotel.ctl
+Data File:      /tmp/Static/StaticScripts/ImportScripts/ClearTrip/ctl/extapi-hotels.bad
+  Bad File:     /tmp/Static/StaticScripts/ImportScripts/ClearTrip/ctl/extapi-hotels.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 999999
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:   Last non-white character != 0X22(character '"')
+                Preserving continuation characters as data
+Path used:      Conventional
+
+Table STATICDATA_ACCO, loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+SUPPLIER_ID                                               CONSTANT
+    Value is 'CLEARTRIP'
+SUPPLIER_NAME                                             CONSTANT
+    Value is 'ClearTrip'
+PRODUCT_ID                          FIRST     *   ,  O(") CHARACTER            
+PRODUCT_NAME                         NEXT     *   ,  O(") CHARACTER            
+CITY_C                               NEXT     *   ,  O(") CHARACTER            
+  (BOUNDFILLER FIELD)
+STATE_CODE                           NEXT     *   ,  O(") CHARACTER            
+COUNTRY_CODE                         NEXT     *   ,  O(") CHARACTER            
+POSTAL_CODE                          NEXT     *   ,  O(") CHARACTER            
+LOCATION                             NEXT     *   ,  O(") CHARACTER            
+STREET1                              NEXT   800   ,  O(") CHARACTER            
+STAR_RATING                          NEXT     *   ,  O(") CHARACTER            
+  (FILLER FIELD)
+LATITUDE                             NEXT  1000   ,  O(") CHARACTER            
+LONGITUDE                            NEXT     *   ,  O(") CHARACTER            
+PROPERTY_TYPE                        NEXT     *   ,  O(") CHARACTER            
+  (FILLER FIELD)
+TELEPHONE_NUMBER                     NEXT     *   ,  O(") CHARACTER            
+EMAIL                                NEXT  1000   ,  O(") CHARACTER            
+  (FILLER FIELD)
+FAX                                  NEXT     *   ,  O(") CHARACTER            
+  (FILLER FIELD)
+WEBSITE                              NEXT   500   ,  O(") CHARACTER            
+  (FILLER FIELD)
+DESCRIPTION                          NEXT 40000   ,  O(") CHARACTER            
+  (FILLER FIELD)
+BASIC_AMENITIES                      NEXT   500   ,  O(") CHARACTER            
+  (FILLER FIELD)
+IMAGE_URLS                           NEXT 50000   ,  O(") CHARACTER            
+  (FILLER FIELD)
+CITY_CODE                            NEXT  1000   ,  O(") CHARACTER            
+    SQL string for column : ":CITY_C"
+CITY_NAME                            NEXT  1000   ,  O(") CHARACTER            
+    SQL string for column : ":CITY_C"
+
+value used for ROWS parameter changed from 64 to 41
+Record 2: Rejected - Error on table STATICDATA_ACCO, column CITY_NAME.
+Field in data file exceeds maximum length
+Record 3: Rejected - Error on table STATICDATA_ACCO, column IMAGE_URLS.
+Field in data file exceeds maximum length
+Record 12: Rejected - Error on table STATICDATA_ACCO, column PROPERTY_TYPE.
+Field in data file exceeds maximum length
+Record 13: Rejected - Error on table STATICDATA_ACCO, column CITY_CODE.
+Field in data file exceeds maximum length
+
+Table STATICDATA_ACCO:
+  13 Rows successfully loaded.
+  4 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 252150 bytes(41 rows)
+Read   buffer bytes:1999999999
+
+Total logical records skipped:          1
+Total logical records read:            17
+Total logical records rejected:         4
+Total logical records discarded:        0
+
+Run began on Thu Mar 02 17:44:36 2017
+Run ended on Thu Mar 02 17:44:36 2017
+
+Elapsed time was:     00:00:00.12
+CPU time was:         00:00:00.05

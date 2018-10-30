@@ -1,0 +1,69 @@
+#!/bin/bash
+cd /opt/app/oracle/product/12.1.0.2/db_1/bin
+ORACLE_HOME=/opt/app/oracle/product/12.1.0.2/db_1; export ORACLE_HOME
+varHotel='ImportHotel.sh'
+varCity='ImportCity.sh'
+varCountry='ImportCountry.sh'
+
+#DELETE SCRIPT
+var2=$1
+./sqlplus C##STATICDATA/static123@cnkdev @/tmp/StaticScripts/ImportScripts/Delete.sql $1
+
+if [ $var2 = "Expedia" ] || [ "$var2" = "Bonotel" ]
+then
+./sqlplus C##STATICDATA/static123@cnkdev @/tmp/StaticScripts/ImportScripts/Delete_Renovation.sql
+fi
+echo $var2
+
+#LOOKUP for Supplier_id
+read var <<< $(echo|awk  "/$var2/"'{getline;print }' /tmp/StaticScripts/ImportScripts/StaticData_SupplierId.dvm | cut -d'>' -f2 | cut -d'<' -f1 )
+
+#SUPPLIER_NAME CONSTANT in CTL file
+echo "[$var]"
+if [ $var2 = "TripVilas" ]
+then
+{
+sed -i "s/select distinct 'TRIPVILAS'/select distinct '\\$var'/g " /tmp/StaticScripts/ImportScripts/$var2/sql/*.sql
+
+}
+else
+{
+sed -i "/SUPPLIER_ID CONSTANT/ c\SUPPLIER_ID CONSTANT '\\$var'," /tmp/StaticScripts/ImportScripts/$var2/ctl/*.ctl
+}
+fi
+
+#IMPORT SCRIPTS
+cd /tmp/StaticScripts/ImportScripts/$var2
+
+if [ $var2 = "Aot" ]
+then
+#import_country
+. /tmp/StaticScripts/ImportScripts/$var2/${var2}_${varCountry}
+echo curl -XGET http://10.21.32.215:8002/StaticAccoDataWrapperCS/StaticWrapperRestService?Supplier_Key=${var2}_${varCities};
+curl -XGET http://10.21.32.215:8002/StaticAccoDataWrapperCS/StaticWrapperRestService?Supplier_Key=${var2}_${varCities};
+echo curl -XGET http://10.21.32.215:8002/StaticAccoDataWrapperCS/StaticWrapperRestService?Supplier_Key=${var2}_${varProduct};
+curl -XGET http://10.21.32.215:8002/StaticAccoDataWrapperCS/StaticWrapperRestService?Supplier_Key=${var2}_${varProduct};
+
+
+else
+{
+#import_hotel
+. /tmp/StaticScripts/ImportScripts/$var2/${var2}_${varHotel}
+#import_country
+. /tmp/StaticScripts/ImportScripts/$var2/${var2}_${varCountry}
+#import_city
+. /tmp/StaticScripts/ImportScripts/$var2/${var2}_${varCity}
+}
+fi
+if [ $var2 = "Expedia" ]
+then
+. /tmp/StaticScripts/ImportScripts/Expedia/Renovation.sh
+elif [ $var2 = "Bonotel" ]
+then
+. /tmp/StaticScripts/ImportScripts/Bonotel/Bonotel_Renovation.sh
+
+fi
+
+#EXPORT CALL
+. /tmp/StaticScripts/ExportScripts/ExportCall.sh $var2
+

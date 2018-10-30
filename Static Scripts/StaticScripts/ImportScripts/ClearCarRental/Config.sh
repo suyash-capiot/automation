@@ -1,0 +1,11 @@
+#!/bin/sh
+export ORACLE_BIN=/opt/app/oracle/product/12.1.0.2/db_1/bin
+export ORACLE_HOME=/opt/app/oracle/product/12.1.0.2/db_1/
+export DB_CON=C##STATICDATA/static123@cnkdev
+export URI=10.21.32.215:8002
+export SQLScript=/home/oracle/Static/StaticScripts/ImportScripts/CommonScripts
+export EXPORTSCRIPTS=/home/oracle/Static/StaticScripts/ExportScripts
+export IMPORTSCRIPTS=/home/oracle/Static/StaticScripts/ImportScripts
+export CAR=/home/oracle/Static/Outbound/CAR
+export INBOUND_PATH=/home/oracle/Static/Inbound/Car
+echo "config"

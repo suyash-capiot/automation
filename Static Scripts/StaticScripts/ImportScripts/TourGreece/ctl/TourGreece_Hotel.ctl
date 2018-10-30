@@ -1,0 +1,23 @@
+LOAD DATA
+INFILE '/tmp/Static/Inbound/Accomodation/TourGreece/TourGreeceHotel.csv'
+APPEND INTO TABLE STATICDATA_ACCO
+FIELDS TERMINATED BY ',' optionally enclosed by '"'
+(
+SUPPLIER_ID CONSTANT 'TOURGREECE',
+SUPPLIER_NAME CONSTANT 'TourGreece',
+COUNTRY_CODE CONSTANT 'GR',
+COUNTRY_NAME CONSTANT 'Greece',
+PRODUCT_ID,
+PRODUCT_NAME,
+Area BOUNDFILLER,
+CITY_CODE "upper(:Area)",
+CITY_NAME "upper(:Area)"
+
+)
+
+
+
+
+
+
+

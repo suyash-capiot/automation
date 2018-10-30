@@ -1,0 +1,17 @@
+OPTIONS (SKIP=1)
+LOAD DATA
+CHARACTERSET UTF8 
+INFILE '/tmp/Static/Inbound/Accomodation/Expedia/ExpediaCountry.txt'
+APPEND INTO TABLE STATICDATA_COUNTRY_PROD
+FIELDS TERMINATED BY '|' optionally enclosed by '"'
+Trailing nullcols
+(
+SUPPLIER_ID CONSTANT 'EXPEDIA',
+SUPPLIER_NAME CONSTANT 'Expedia',
+CountryID FILLER,
+LanguageCode FILLER,
+COUNTRY_NAME,
+COUNTRY_CODE,
+Transliteration FILLER,
+ContinentID FILLER
+)

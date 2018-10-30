@@ -1,0 +1,123 @@
+<project name="ant-for-example" default="read" basedir="${basedir}">
+
+<taskdef resource="net/sf/antcontrib/antlib.xml">
+<classpath>
+    <pathelement location="/opt/apache-ant-1.9.6/lib/ant-contrib-1.0b3.jar"/>
+    <pathelement location="/opt/apache-ant-1.9.6/bin/scripts/com.coxandkings.deploy.jar"/>
+  </classpath>
+</taskdef>
+
+
+   <!--    Task Definition     -->
+   
+   <taskdef name="projectConfigJAR" classname="com.coxandkings.deploy.osb.ant.ProjectConfigJARTask"/>
+   
+   <taskdef name="deployConfigJAR"  classname="com.coxandkings.deploy.osb.ant.DeployConfigJARTask"/>
+   
+   <property name="jarDir" value="${jarDir}"/>
+   <property name="settingsFile" value="${settingsFile}"/>
+   
+
+<target name="read">
+
+	<loadfile property="textFile" srcfile="${srcfile}" />
+	
+		<for param ="line" list="${textFile}" delimiter="${line.separator}">
+			
+			<sequential>
+				
+				<!--echo message="${line}"/-->
+				
+				<echo>@{line}</echo>
+						
+					<antcall target="createConfigJAR">
+					
+												
+							<param name="projectName" value='@{line}'/>
+					
+							<param name="jarLocation" value='@{line}'/>
+					
+					</antcall>
+						
+						
+						
+			</sequential>
+				
+				
+		</for>
+
+</target>
+
+
+
+
+<target name="write">
+
+	<loadfile property="jarFileList" srcfile="${srcfile}" />
+	
+		<for param ="line" list="${jarFileList}" delimiter="${line.separator}">
+			
+			<sequential>
+				
+				<!--echo message="${line}"/-->
+				
+				<echo>@{line}</echo>
+						
+					<antcall target="deployConfigJAR">
+					
+												
+							<param name="settingFile" value="${settingsFile}"/>
+					
+							<param name="jarLocation" value='@{line}'/>
+					
+					</antcall>
+						
+						
+						
+			</sequential>
+				
+				
+		</for>
+
+</target>
+
+
+    <!--    Environment values  -->
+    <property environment="env"/>
+    <property name="mw.home"            location="${env.MW_HOME}"/>
+    <property name="wl.home"            location="${env.WL_HOME}"/>
+    <property name="osb.home"           location="${env.OSB_HOME}"/>
+
+
+
+
+    <!--    Initialize the default values -->
+    <target name="init">
+        <property name="task.failonerror" value="true"/>
+        <property name="task.includesystem" value="false"/>
+    </target>
+	
+	
+
+    <target name="createConfigJAR" depends="init">
+	
+	
+	<echo>${projectName}</echo>
+	<echo>${jarLocation}</echo>
+        <projectConfigJAR failonerror="${task.failonerror}"
+                   projectDirectory="${basedir}/${projectName}"
+                   configJARFile="${jarDir}/${jarLocation}.jar"/>
+				   
+				   <!--includeSystem="${task.includesystem}-->
+    </target>
+
+	
+	<target name="deployConfigJAR" depends="init">
+	
+		<echo>${settingsFile}</echo>
+		<echo>${jarLocation}</echo>
+			<deployConfigJAR failonerror="${task.failonerror}"
+                   connParmsFile="${settingsFile}"
+                   configJARFile="${jarDir}/${jarLocation}"/>
+    </target>
+</project>

@@ -1,0 +1,201 @@
+
+SQL*Loader: Release 12.1.0.2.0 - Production on Fri Mar 3 12:29:41 2017
+
+Copyright (c) 1982, 2014, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   /tmp/Static/StaticScripts/ImportScripts/ClearTrip/ctl/ClearTrip_ImportHotel_hotel.ctl
+Character Set WE8ISO8859P1 specified for all input.
+
+Data File:      /tmp/Static/backup/Accomodation/ClearTrip/extapi-hotels.csv
+  Bad File:     /tmp/Static/StaticScripts/ImportScripts/ClearTrip/ctl/extapi-hotels.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 999999
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:   Last non-white character != 0X22(character '"')
+                Preserving continuation characters as data
+Path used:      Conventional
+
+Table STATICDATA_ACCO, loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+SUPPLIER_ID                                               CONSTANT
+    Value is 'CLEARTRIP'
+SUPPLIER_NAME                                             CONSTANT
+    Value is 'ClearTrip'
+PRODUCT_ID                          FIRST     *   ,  O(") CHARACTER            
+PRODUCT_NAME                         NEXT     *   ,  O(") CHARACTER            
+CITY_C                               NEXT     *   ,  O(") CHARACTER            
+  (BOUNDFILLER FIELD)
+STATE_CODE                           NEXT     *   ,  O(") CHARACTER            
+COUNTRY_CODE                         NEXT     *   ,  O(") CHARACTER            
+POSTAL_CODE                          NEXT     *   ,  O(") CHARACTER            
+LOCATION                             NEXT     *   ,  O(") CHARACTER            
+STREET1                              NEXT   800   ,  O(") CHARACTER            
+STAR_RATING                          NEXT     *   ,  O(") CHARACTER            
+  (FILLER FIELD)
+LATITUDE                             NEXT  1000   ,  O(") CHARACTER            
+LONGITUDE                            NEXT     *   ,  O(") CHARACTER            
+PROPERTY_TYPE                        NEXT     *   ,  O(") CHARACTER            
+  (FILLER FIELD)
+TELEPHONE_NUMBER                     NEXT     *   ,  O(") CHARACTER            
+EMAIL                                NEXT  1000   ,  O(") CHARACTER            
+  (FILLER FIELD)
+FAX                                  NEXT     *   ,  O(") CHARACTER            
+  (FILLER FIELD)
+WEBSITE                              NEXT   500   ,  O(") CHARACTER            
+  (FILLER FIELD)
+DESCRIPTION                          NEXT 40000   ,  O(") CHARACTER            
+  (FILLER FIELD)
+BASIC_AMENITIES                      NEXT   500   ,  O(") CHARACTER            
+  (FILLER FIELD)
+IMAGE_URLS                           NEXT 50000   ,  O(") CHARACTER            
+  (FILLER FIELD)
+CITY_CODE                            NEXT  1000   ,  O(") CHARACTER            
+    SQL string for column : ":CITY_C"
+CITY_NAME                            NEXT  1000   ,  O(") CHARACTER            
+    SQL string for column : ":CITY_C"
+
+value used for ROWS parameter changed from 64 to 41
+Record 6692: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 6693: Rejected - Error on table STATICDATA_ACCO, column PRODUCT_ID.
+Field in data file exceeds maximum length
+Record 82014: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 82015: Rejected - Error on table STATICDATA_ACCO, column PRODUCT_ID.
+Field in data file exceeds maximum length
+Record 86988: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 86989: Rejected - Error on table STATICDATA_ACCO, column PRODUCT_ID.
+no terminator found after TERMINATED and ENCLOSED field
+Record 86990: Rejected - Error on table STATICDATA_ACCO, column PRODUCT_ID.
+no terminator found after TERMINATED and ENCLOSED field
+Record 86991: Rejected - Error on table STATICDATA_ACCO, column PRODUCT_ID.
+no terminator found after TERMINATED and ENCLOSED field
+Record 86992: Rejected - Error on table STATICDATA_ACCO, column PRODUCT_ID.
+no terminator found after TERMINATED and ENCLOSED field
+Record 86993: Rejected - Error on table STATICDATA_ACCO, column PRODUCT_ID.
+no terminator found after TERMINATED and ENCLOSED field
+Record 86994: Rejected - Error on table STATICDATA_ACCO, column PRODUCT_ID.
+no terminator found after TERMINATED and ENCLOSED field
+Record 98579: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 98580: Rejected - Error on table STATICDATA_ACCO, column CITY_C.
+Field in data file exceeds maximum length
+Record 147951: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 147952: Rejected - Error on table STATICDATA_ACCO, column CITY_C.
+Field in data file exceeds maximum length
+Record 171029: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 171030: Rejected - Error on table STATICDATA_ACCO, column WEBSITE.
+Field in data file exceeds maximum length
+Record 187504: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 187505: Rejected - Error on table STATICDATA_ACCO, column EMAIL.
+Field in data file exceeds maximum length
+Record 194797: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 194798: Rejected - Error on table STATICDATA_ACCO, column PRODUCT_ID.
+Field in data file exceeds maximum length
+Record 204592: Rejected - Error on table STATICDATA_ACCO, column CITY_NAME.
+Field in data file exceeds maximum length
+Record 286947: Rejected - Error on table STATICDATA_ACCO, column IMAGE_URLS.
+Field in data file exceeds maximum length
+Record 345433: Rejected - Error on table STATICDATA_ACCO.
+ORA-00001: unique constraint (C##STATICDATA.STATICDATA_ACCO_PK) violated
+
+Record 345434: Rejected - Error on table STATICDATA_ACCO.
+ORA-00001: unique constraint (C##STATICDATA.STATICDATA_ACCO_PK) violated
+
+Record 345435: Rejected - Error on table STATICDATA_ACCO.
+ORA-00001: unique constraint (C##STATICDATA.STATICDATA_ACCO_PK) violated
+
+Record 345436: Rejected - Error on table STATICDATA_ACCO.
+ORA-00001: unique constraint (C##STATICDATA.STATICDATA_ACCO_PK) violated
+
+Record 345437: Rejected - Error on table STATICDATA_ACCO.
+ORA-00001: unique constraint (C##STATICDATA.STATICDATA_ACCO_PK) violated
+
+Record 345438: Rejected - Error on table STATICDATA_ACCO.
+ORA-00001: unique constraint (C##STATICDATA.STATICDATA_ACCO_PK) violated
+
+Record 367176: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 367177: Rejected - Error on table STATICDATA_ACCO, column LOCATION.
+Field in data file exceeds maximum length
+Record 371378: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 371379: Rejected - Error on table STATICDATA_ACCO, column LOCATION.
+Field in data file exceeds maximum length
+Record 371452: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 371453: Rejected - Error on table STATICDATA_ACCO, column STREET1.
+Field in data file exceeds maximum length
+Record 375438: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 375439: Rejected - Error on table STATICDATA_ACCO, column LOCATION.
+Field in data file exceeds maximum length
+Record 376820: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 376821: Rejected - Error on table STATICDATA_ACCO, column CITY_C.
+Field in data file exceeds maximum length
+Record 377241: Rejected - Error on table STATICDATA_ACCO, column PROPERTY_TYPE.
+Field in data file exceeds maximum length
+Record 379628: Rejected - Error on table STATICDATA_ACCO, column STREET1.
+second enclosure string not present
+Record 379629: Rejected - Error on table STATICDATA_ACCO, column TELEPHONE_NUMBER.
+Field in data file exceeds maximum length
+Record 380468: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 382817: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 382818: Rejected - Error on table STATICDATA_ACCO, column FAX.
+Field in data file exceeds maximum length
+Record 382881: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 383487: Rejected - Error on table STATICDATA_ACCO, column STREET1.
+second enclosure string not present
+Record 383488: Rejected - Error on table STATICDATA_ACCO, column LATITUDE.
+Field in data file exceeds maximum length
+Record 383615: Rejected - Error on table STATICDATA_ACCO, column STREET1.
+second enclosure string not present
+Record 383616: Rejected - Error on table STATICDATA_ACCO, column LATITUDE.
+Field in data file exceeds maximum length
+Record 384154: Rejected - Error on table STATICDATA_ACCO, column DESCRIPTION.
+second enclosure string not present
+Record 384155: Rejected - Error on table STATICDATA_ACCO, column STATE_CODE.
+Field in data file exceeds maximum length
+Record 385033: Rejected - Error on table STATICDATA_ACCO, column STREET1.
+second enclosure string not present
+Record 385034: Rejected - Error on table STATICDATA_ACCO, column WEBSITE.
+Field in data file exceeds maximum length
+
+Table STATICDATA_ACCO:
+  503968 Rows successfully loaded.
+  54 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 252150 bytes(41 rows)
+Read   buffer bytes:1999999999
+
+Total logical records skipped:          1
+Total logical records read:        504022
+Total logical records rejected:        54
+Total logical records discarded:        0
+
+Run began on Fri Mar 03 12:29:41 2017
+Run ended on Fri Mar 03 12:31:28 2017
+
+Elapsed time was:     00:01:46.65
+CPU time was:         00:00:29.94

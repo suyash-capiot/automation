@@ -1,0 +1,18 @@
+
+LOAD DATA 
+INFILE '/tmp/Static/Inbound/Accomodation/Mgh/MghCountry.csv'
+APPEND INTO TABLE STATICDATA_COUNTRY
+FIELDS TERMINATED BY ',' optionally enclosed by '"'
+(
+SUPPLIER_ID CONSTANT 'MGH',
+SUPPLIER_NAME CONSTANT 'Mgh',
+COUNTRY_CODE,
+COUNTRY_NAME
+)
+
+
+
+
+
+
+

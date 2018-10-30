@@ -1,0 +1,37 @@
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh Dotw > /tmp/Static/Cron_Logs/Dotw/ 2>&1
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh OyoRooms
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh AbbeyTours
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh Aot
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh Restel
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh Hotelbeds
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh Jacob
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh Olympia
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh OrangeTourism
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh Tourico
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh Travco
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh VistaRooms
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh Acampora
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh GTA
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh Mansley
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh Qantas
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/RunStaticWrapper.sh WhiteSandsDubai
+
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh HotelDo
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh Rts
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh TourGreece
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh Pacto
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh Mgh
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh Cbs
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh Dst
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh Miki
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh Desiya
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh ClearTrip
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh TripVilas
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh TheTraveller
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh AberuOnline
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh Ati
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh Bonotel
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh Expedia
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh LateRooms
+30 11 * * * /tmp/Static/StaticScripts/ImportScripts/CommonScripts/dynamic.sh TravelBullz
+

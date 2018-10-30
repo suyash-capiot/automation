@@ -1,0 +1,11 @@
+#!/bin/bash
+NOW=$(date +"%Y%m%d")
+echo [$NOW]
+cd /tmp/Inbound/Accomodation/Ati/
+
+sort -u -t'|' -k6,6 /tmp/Inbound/Accomodation/Ati/$NOW/*.txt>>AtiCity.txt
+
+cd /opt/app/oracle/product/12.1.0.2/db_1/bin
+ORACLE_HOME=/opt/app/oracle/product/12.1.0.2/db_1/; export ORACLE_HOME
+./sqlldr C##STATICDATA/static123@cnkdev control=/tmp/StaticScripts/ImportScripts/Ati/ctl/Ati_city.ctl
+log=/tmp/Inbound/Accomodation/Ati/$NOW/log/ bad=/tmp/Inbound/Accomodation/Ati/$NOW/bad/ data=/tmp/Inbound/Accomodation/Ati/AtiCity.txt

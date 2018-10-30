@@ -1,0 +1,51 @@
+LOAD DATA
+CHARACTERSET WE8ISO8859P1
+INFILE '/tmp/Static/Inbound/Accomodation/LateRooms/LateRoomsHotel.csv'
+APPEND INTO TABLE STATICDATA_CITY 
+FIELDS TERMINATED BY ',' optionally enclosed by '"'
+trailing nullcols
+(
+SUPPLIER_ID CONSTANT 'LATEROOMS',
+SUPPLIER_NAME CONSTANT 'LateRooms',
+PRODUCT_ID FILLER,
+PRODUCT_NAME FILLER CHAR(800),
+HotelStar FILLER,
+ADDRESS FILLER,
+CITY_ BOUNDFILLER,
+HotelCounty FILLER,
+HotelPostcode FILLER,
+COUNTRY_NAME,
+COUNTRY_CODE,
+HotelDescription FILLER CHAR(4000),
+HotelDirections FILLER CHAR(4000),
+HotelImage FILLER CHAR(4000),
+HotelImages FILLER CHAR(4000),
+HotelUrl FILLER,
+PricesFrom FILLER,
+MaxPrice FILLER,
+CurrencyCode FILLER,
+ScoreOutOf6 FILLER,
+NoOfReviews FILLER,
+ReviewUrl FILLER CHAR(4000),
+Facilities FILLER CHAR(4000),
+AccommodationType FILLER,
+Appeals FILLER CHAR(4000),
+HotelStarAccreditor FILLER,
+HotelCreatedDate FILLER,
+TotalRooms FILLER,
+CancellationPolicy FILLER,
+CancellationDays FILLER,
+CancellationTerms FILLER CHAR(4000),
+CityTaxType FILLER,
+CityTaxValue FILLER,
+CityTaxOptedIn FILLER,
+IsCityTaxArea FILLER,
+CheckInTime FILLER,
+CheckOutTime FILLER,
+LatestCheckInTime FILLER,
+TELEPHONE_NUMBER FILLER,
+Fax FILLER,
+WifiAvailable FILLER,
+CITY_CODE "UPPER(:CITY_)",
+CITY_NAME ":CITY_"
+)

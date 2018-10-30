@@ -1,0 +1,19 @@
+LOAD DATA 
+INFILE '/tmp/Static/Inbound/Accomodation/Bonotel/BonotelCity.csv'
+APPEND INTO TABLE STATICDATA_CITY
+FIELDS TERMINATED BY ',' optionally enclosed by '"'
+(
+SUPPLIER_ID CONSTANT 'BONOTEL',
+SUPPLIER_NAME CONSTANT 'Bonotel',
+CITY_CODE,
+CITY_NAME,
+STATE_CODE,
+COUNTRY_CODE
+)
+
+
+
+
+
+
+

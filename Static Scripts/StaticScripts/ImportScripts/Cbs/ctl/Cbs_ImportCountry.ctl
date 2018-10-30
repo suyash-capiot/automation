@@ -1,0 +1,17 @@
+LOAD DATA
+INFILE '/tmp/Static/Inbound/Accomodation/Cbs/CbsCountry.csv'
+APPEND INTO TABLE STATICDATA_COUNTRY
+FIELDS TERMINATED BY ',' optionally enclosed by '"'
+(
+SUPPLIER_ID CONSTANT 'CBS',
+SUPPLIER_NAME CONSTANT 'Cbs',
+COUNTRY_CODE,
+COUNTRY_NAME
+)
+
+
+
+
+
+
+

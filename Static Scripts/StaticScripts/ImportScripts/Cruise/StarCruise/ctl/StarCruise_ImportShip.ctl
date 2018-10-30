@@ -1,0 +1,12 @@
+LOAD DATA
+INFILE '/tmp/Static/Inbound/Cruise/StarCruise/StarCruise_ImportShip.csv'
+APPEND INTO TABLE STATICDATA_CRUISE_DETAILS
+FIELDS TERMINATED BY ',' optionally enclosed by '"'
+trailing nullcols
+(
+SUPPLIER_ID CONSTANT 'STARCRUISE',
+SUPPLIER_NAME CONSTANT 'StarCruise',
+SHIP_ID,
+SHIP_NAME,
+PAX_CAPACITY
+)
